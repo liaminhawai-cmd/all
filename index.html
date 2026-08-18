@@ -65,7 +65,7 @@
     .card {
       display: flex;
       flex-direction: column;
-      min-height: 178px;
+      min-height: 192px;
       border: 1px solid var(--line);
       border-radius: 18px;
       background: var(--panel);
@@ -74,7 +74,22 @@
       transition: transform .16s ease, border-color .16s ease;
     }
     .card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
-    .tag { font-size: .72rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 9px; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .tile-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
+      border-radius: 12px;
+      background: var(--accent-soft);
+      font-size: 1.35rem;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
+    }
+    .tile-icon.text-icon { font-size: 1.1rem; font-weight: 900; color: var(--accent); font-family: Georgia, serif; }
+    .tag { font-size: .72rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; text-align: right; }
     .card h3 { margin: 0 0 8px; font-size: 1.13rem; letter-spacing: -.025em; }
     .card p { margin: 0 0 18px; color: var(--muted); font-size: .9rem; line-height: 1.45; }
     .actions { display: flex; gap: 8px; margin-top: auto; }
@@ -97,7 +112,7 @@
     @media (max-width: 560px) {
       .wrap { width: min(100% - 22px, 1180px); padding-top: 34px; }
       .grid { grid-template-columns: 1fr; }
-      .card { min-height: 158px; }
+      .card { min-height: 172px; }
     }
   </style>
 </head>
@@ -119,23 +134,28 @@
         <div class="section-head"><h2>English &amp; EAL</h2><span class="section-count">5 sites</span></div>
         <div class="grid">
           <article class="card" data-card data-search="elc pages english eal poetry homework pronunciation">
-            <div class="tag">English &amp; EAL</div><h3>ELC Pages</h3><p>ELC student hub and classroom resources.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🎓</div><div class="tag">English &amp; EAL</div></div>
+            <h3>ELC Pages</h3><p>ELC student hub and classroom resources.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/ELC-Pages/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/ELC-Pages">Repo</a></div>
           </article>
           <article class="card" data-card data-search="eal vocabulary site words translation vocabulary hub">
-            <div class="tag">English &amp; EAL</div><h3>EAL Vocabulary Site</h3><p>Vocabulary learning and translation resources.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🌐</div><div class="tag">English &amp; EAL</div></div>
+            <h3>EAL Vocabulary Site</h3><p>Vocabulary learning and translation resources.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/EAL-Vocabulary-Site/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/EAL-Vocabulary-Site">Repo</a></div>
           </article>
           <article class="card" data-card data-search="grammar hub writing grammar english">
-            <div class="tag">English &amp; EAL</div><h3>Grammar Hub</h3><p>Grammar and writing support hub.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">✍️</div><div class="tag">English &amp; EAL</div></div>
+            <h3>Grammar Hub</h3><p>Grammar and writing support hub.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Grammar-hub/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Grammar-hub">Repo</a></div>
           </article>
           <article class="card" data-card data-search="phonics sounds pronunciation reading">
-            <div class="tag">English &amp; EAL</div><h3>Phonics</h3><p>Interactive phonics practice.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🔤</div><div class="tag">English &amp; EAL</div></div>
+            <h3>Phonics</h3><p>Interactive phonics practice.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Phonics/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Phonics">Repo</a></div>
           </article>
           <article class="card" data-card data-search="bone sparrow novel english literature reading">
-            <div class="tag">English &amp; EAL</div><h3>Bone Sparrow</h3><p>Novel study resources and student activities.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🐦</div><div class="tag">English &amp; EAL</div></div>
+            <h3>Bone Sparrow</h3><p>Novel study resources and student activities.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Bone-Sparrow/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Bone-Sparrow">Repo</a></div>
           </article>
         </div>
@@ -145,23 +165,28 @@
         <div class="section-head"><h2>Humanities</h2><span class="section-count">5 sites</span></div>
         <div class="grid">
           <article class="card" data-card data-search="year 7 humanities pages history geography economics civics student hub">
-            <div class="tag">Humanities</div><h3>Year 7 Humanities</h3><p>Live student hub across the Humanities subjects.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🏛️</div><div class="tag">Humanities</div></div>
+            <h3>Year 7 Humanities</h3><p>Live student hub across the Humanities subjects.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-Humanities-Pages/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-Humanities-Pages">Repo</a></div>
           </article>
           <article class="card" data-card data-search="water in the world geography pqe data water crisis">
-            <div class="tag">Humanities</div><h3>Water in the World</h3><p>Year 7 Geography learning activities.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">💧</div><div class="tag">Humanities</div></div>
+            <h3>Water in the World</h3><p>Year 7 Geography learning activities.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Water-in-the-world/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Water-in-the-world">Repo</a></div>
           </article>
           <article class="card" data-card data-search="year 7 history wagoll source analysis ancient australia">
-            <div class="tag">Humanities</div><h3>Year 7 History</h3><p>History WAGOLL walls and learning resources.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🏺</div><div class="tag">Humanities</div></div>
+            <h3>Year 7 History</h3><p>History WAGOLL walls and learning resources.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-History/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-History">Repo</a></div>
           </article>
           <article class="card" data-card data-search="year 7 geography wagoll water">
-            <div class="tag">Humanities</div><h3>Year 7 Geography</h3><p>Geography WAGOLL walls and skill resources.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🌏</div><div class="tag">Humanities</div></div>
+            <h3>Year 7 Geography</h3><p>Geography WAGOLL walls and skill resources.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-Geography/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-Geography">Repo</a></div>
           </article>
           <article class="card" data-card data-search="year 7 economics business wagoll">
-            <div class="tag">Humanities</div><h3>Year 7 Economics &amp; Business</h3><p>Economics and Business WAGOLL walls and resources.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">📈</div><div class="tag">Humanities</div></div>
+            <h3>Year 7 Economics &amp; Business</h3><p>Economics and Business WAGOLL walls and resources.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-Economics/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-Economics">Repo</a></div>
           </article>
         </div>
@@ -171,11 +196,13 @@
         <div class="section-head"><h2>Learning &amp; wellbeing</h2><span class="section-count">2 sites</span></div>
         <div class="grid">
           <article class="card" data-card data-search="multiplication tables maths math times tables">
-            <div class="tag">Learning</div><h3>Multiplication Tables</h3><p>Interactive times-table practice.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">✖️</div><div class="tag">Learning</div></div>
+            <h3>Multiplication Tables</h3><p>Interactive times-table practice.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Multiplication-tables/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Multiplication-tables">Repo</a></div>
           </article>
           <article class="card" data-card data-search="work life education wellbeing school">
-            <div class="tag">Learning &amp; wellbeing</div><h3>Work Life Education</h3><p>Education and wellbeing resources.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🌱</div><div class="tag">Learning &amp; wellbeing</div></div>
+            <h3>Work Life Education</h3><p>Education and wellbeing resources.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Work-Life-Education/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Work-Life-Education">Repo</a></div>
           </article>
         </div>
@@ -185,23 +212,28 @@
         <div class="section-head"><h2>Tools &amp; experiments</h2><span class="section-count">5 sites</span></div>
         <div class="grid">
           <article class="card" data-card data-search="tau game neural network ai ladder">
-            <div class="tag">Experiment</div><h3>Tau</h3><p>Tau game project, tools and live outputs.</p>
+            <div class="card-top"><div class="tile-icon text-icon" aria-hidden="true">τ</div><div class="tag">Experiment</div></div>
+            <h3>Tau</h3><p>Tau game project, tools and live outputs.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Tau/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Tau">Repo</a></div>
           </article>
           <article class="card" data-card data-search="pointer interactive experiment">
-            <div class="tag">Experiment</div><h3>Pointer</h3><p>Interactive project.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🖱️</div><div class="tag">Experiment</div></div>
+            <h3>Pointer</h3><p>Interactive project.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Pointer/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Pointer">Repo</a></div>
           </article>
           <article class="card" data-card data-search="gait trait simulator simulation genetics evolution">
-            <div class="tag">Simulation</div><h3>Gait Trait Simulator</h3><p>Interactive trait simulation.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🧬</div><div class="tag">Simulation</div></div>
+            <h3>Gait Trait Simulator</h3><p>Interactive trait simulation.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Gait-trait-simulate/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Gait-trait-simulate">Repo</a></div>
           </article>
           <article class="card" data-card data-search="adaptive just intonation music tuning audio">
-            <div class="tag">Music experiment</div><h3>Adaptive Just Intonation</h3><p>Interactive tuning and intonation experiment.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🎵</div><div class="tag">Music experiment</div></div>
+            <h3>Adaptive Just Intonation</h3><p>Interactive tuning and intonation experiment.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/adaptive-Just-intonation/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/adaptive-Just-intonation">Repo</a></div>
           </article>
           <article class="card" data-card data-search="pattern block drum music drum machine rhythm">
-            <div class="tag">Music experiment</div><h3>Pattern Block Drum</h3><p>Interactive pattern-based drum machine.</p>
+            <div class="card-top"><div class="tile-icon" aria-hidden="true">🥁</div><div class="tag">Music experiment</div></div>
+            <h3>Pattern Block Drum</h3><p>Interactive pattern-based drum machine.</p>
             <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/pattern-block-drum/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/pattern-block-drum">Repo</a></div>
           </article>
         </div>
