@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A launcher for Liam's live GitHub Pages sites.">
+  <title>All live sites</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f5f7;
+      --panel: rgba(255,255,255,.86);
+      --text: #17191c;
+      --muted: #626871;
+      --line: #d8dce2;
+      --accent: #2457d6;
+      --accent-soft: #e8eeff;
+      --shadow: 0 10px 32px rgba(28,34,45,.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111317;
+        --panel: rgba(27,30,36,.9);
+        --text: #f4f6f8;
+        --muted: #aeb5bf;
+        --line: #383e48;
+        --accent: #91adff;
+        --accent-soft: #202c50;
+        --shadow: 0 12px 34px rgba(0,0,0,.28);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 52px 0 72px; }
+    header { display: grid; gap: 18px; margin-bottom: 28px; }
+    .eyebrow { font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+    h1 { margin: 0; font-size: clamp(2.4rem, 7vw, 5.2rem); line-height: .95; letter-spacing: -.055em; }
+    .lede { margin: 0; max-width: 700px; color: var(--muted); font-size: 1.05rem; line-height: 1.55; }
+    .tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 34px; }
+    input {
+      flex: 1 1 310px;
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 13px 15px;
+      font: inherit;
+      outline: none;
+      box-shadow: var(--shadow);
+    }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .count { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+    section { margin: 34px 0 46px; }
+    .section-head { display: flex; gap: 12px; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 16px; }
+    h2 { margin: 0; font-size: 1.2rem; letter-spacing: -.02em; }
+    .section-count { color: var(--muted); font-size: .82rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 178px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      transition: transform .16s ease, border-color .16s ease;
+    }
+    .card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+    .tag { font-size: .72rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 9px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.13rem; letter-spacing: -.025em; }
+    .card p { margin: 0 0 18px; color: var(--muted); font-size: .9rem; line-height: 1.45; }
+    .actions { display: flex; gap: 8px; margin-top: auto; }
+    a { color: inherit; }
+    .open, .repo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 9px 11px;
+      font-size: .86rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .open { background: var(--accent); color: #fff; flex: 1; }
+    @media (prefers-color-scheme: dark) { .open { color: #10131a; } }
+    .repo { border: 1px solid var(--line); color: var(--muted); }
+    .empty { display: none; color: var(--muted); padding: 28px 0; }
+    footer { border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: .82rem; }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 22px, 1180px); padding-top: 34px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: 158px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">liaminhawai-cmd · GitHub Pages</div>
+      <h1>All live sites</h1>
+      <p class="lede">One place for the live teaching sites, student tools, simulations and experiments.</p>
+    </header>
+
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search sites…" autocomplete="off" aria-label="Search live sites">
+      <div class="count"><strong id="visibleCount">17</strong> live sites</div>
+    </div>
+
+    <div id="sections">
+      <section data-section>
+        <div class="section-head"><h2>English &amp; EAL</h2><span class="section-count">5 sites</span></div>
+        <div class="grid">
+          <article class="card" data-card data-search="elc pages english eal poetry homework pronunciation">
+            <div class="tag">English &amp; EAL</div><h3>ELC Pages</h3><p>ELC student hub and classroom resources.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/ELC-Pages/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/ELC-Pages">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="eal vocabulary site words translation vocabulary hub">
+            <div class="tag">English &amp; EAL</div><h3>EAL Vocabulary Site</h3><p>Vocabulary learning and translation resources.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/EAL-Vocabulary-Site/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/EAL-Vocabulary-Site">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="grammar hub writing grammar english">
+            <div class="tag">English &amp; EAL</div><h3>Grammar Hub</h3><p>Grammar and writing support hub.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Grammar-hub/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Grammar-hub">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="phonics sounds pronunciation reading">
+            <div class="tag">English &amp; EAL</div><h3>Phonics</h3><p>Interactive phonics practice.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Phonics/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Phonics">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="bone sparrow novel english literature reading">
+            <div class="tag">English &amp; EAL</div><h3>Bone Sparrow</h3><p>Novel study resources and student activities.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Bone-Sparrow/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Bone-Sparrow">Repo</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section data-section>
+        <div class="section-head"><h2>Humanities</h2><span class="section-count">5 sites</span></div>
+        <div class="grid">
+          <article class="card" data-card data-search="year 7 humanities pages history geography economics civics student hub">
+            <div class="tag">Humanities</div><h3>Year 7 Humanities</h3><p>Live student hub across the Humanities subjects.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-Humanities-Pages/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-Humanities-Pages">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="water in the world geography pqe data water crisis">
+            <div class="tag">Humanities</div><h3>Water in the World</h3><p>Year 7 Geography learning activities.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Water-in-the-world/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Water-in-the-world">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="year 7 history wagoll source analysis ancient australia">
+            <div class="tag">Humanities</div><h3>Year 7 History</h3><p>History WAGOLL walls and learning resources.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-History/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-History">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="year 7 geography wagoll water">
+            <div class="tag">Humanities</div><h3>Year 7 Geography</h3><p>Geography WAGOLL walls and skill resources.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-Geography/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-Geography">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="year 7 economics business wagoll">
+            <div class="tag">Humanities</div><h3>Year 7 Economics &amp; Business</h3><p>Economics and Business WAGOLL walls and resources.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Year-7-Economics/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Year-7-Economics">Repo</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section data-section>
+        <div class="section-head"><h2>Learning &amp; wellbeing</h2><span class="section-count">2 sites</span></div>
+        <div class="grid">
+          <article class="card" data-card data-search="multiplication tables maths math times tables">
+            <div class="tag">Learning</div><h3>Multiplication Tables</h3><p>Interactive times-table practice.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Multiplication-tables/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Multiplication-tables">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="work life education wellbeing school">
+            <div class="tag">Learning &amp; wellbeing</div><h3>Work Life Education</h3><p>Education and wellbeing resources.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Work-Life-Education/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Work-Life-Education">Repo</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section data-section>
+        <div class="section-head"><h2>Tools &amp; experiments</h2><span class="section-count">5 sites</span></div>
+        <div class="grid">
+          <article class="card" data-card data-search="tau game neural network ai ladder">
+            <div class="tag">Experiment</div><h3>Tau</h3><p>Tau game project, tools and live outputs.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Tau/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Tau">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="pointer interactive experiment">
+            <div class="tag">Experiment</div><h3>Pointer</h3><p>Interactive project.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Pointer/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Pointer">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="gait trait simulator simulation genetics evolution">
+            <div class="tag">Simulation</div><h3>Gait Trait Simulator</h3><p>Interactive trait simulation.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/Gait-trait-simulate/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/Gait-trait-simulate">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="adaptive just intonation music tuning audio">
+            <div class="tag">Music experiment</div><h3>Adaptive Just Intonation</h3><p>Interactive tuning and intonation experiment.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/adaptive-Just-intonation/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/adaptive-Just-intonation">Repo</a></div>
+          </article>
+          <article class="card" data-card data-search="pattern block drum music drum machine rhythm">
+            <div class="tag">Music experiment</div><h3>Pattern Block Drum</h3><p>Interactive pattern-based drum machine.</p>
+            <div class="actions"><a class="open" href="https://liaminhawai-cmd.github.io/pattern-block-drum/">Open site ↗</a><a class="repo" href="https://github.com/liaminhawai-cmd/pattern-block-drum">Repo</a></div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <p class="empty" id="empty">No sites match that search.</p>
+    <footer>Index of Pages-enabled repositories · last rebuilt 18 Aug 2026</footer>
+  </main>
+
+  <script>
+    const input = document.getElementById('search');
+    const cards = [...document.querySelectorAll('[data-card]')];
+    const sections = [...document.querySelectorAll('[data-section]')];
+    const count = document.getElementById('visibleCount');
+    const empty = document.getElementById('empty');
+
+    function filterSites() {
+      const q = input.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const haystack = `${card.textContent} ${card.dataset.search || ''}`.toLowerCase();
+        const show = !q || haystack.includes(q);
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      sections.forEach(section => {
+        const shown = [...section.querySelectorAll('[data-card]')].filter(card => !card.hidden).length;
+        section.hidden = shown === 0;
+        const label = section.querySelector('.section-count');
+        label.textContent = `${shown} ${shown === 1 ? 'site' : 'sites'}`;
+      });
+      count.textContent = visible;
+      empty.style.display = visible ? 'none' : 'block';
+    }
+    input.addEventListener('input', filterSites);
+  </script>
+</body>
+</html>
